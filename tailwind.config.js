@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       color: {
-        'black': '#141615'
+        'black2': '#141615'
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif']
