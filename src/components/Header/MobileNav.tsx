@@ -1,6 +1,7 @@
 import { ShoppingBag, User } from "@phosphor-icons/react";
 import Logo from "../../assets/logo.svg";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const menuVariants = {
   hidden: {
@@ -96,11 +97,35 @@ const MobileNavBar: React.FC = () => {
             <div className="flex flex-col justify-around py-20 items-center h-full gap-20">
               <div className="">
                 <ul className="flex flex-col gap-20 text-5xl items-center text-neutral-300">
-                  <motion.li variants={item}>Home</motion.li>
-                  <motion.li variants={item}>Products</motion.li>
-                  <motion.li variants={item}>City</motion.li>
-                  <motion.li variants={item}>About Us</motion.li>
-                  <motion.li variants={item}>Contact</motion.li>
+                  <motion.li 
+                  onClick={() => toggleMobileNav()}
+                  variants={item}>
+                    <Link to={"/"}>Home</Link>
+                  </motion.li>
+
+                  <motion.li 
+                  onClick={() => toggleMobileNav()}
+                  variants={item}>
+                    Products
+                  </motion.li>
+
+                  <motion.li 
+                  onClick={() => toggleMobileNav()}
+                  variants={item}>
+                    City
+                  </motion.li>
+
+                  <motion.li
+                  onClick={() => toggleMobileNav()} 
+                  variants={item}>
+                    <Link to={`about-us`}>About Us</Link>
+                  </motion.li>
+
+                  <motion.li 
+                  onClick={() => toggleMobileNav()}
+                  variants={item}>
+                    Contact
+                  </motion.li>
                 </ul>
               </div>
               <motion.div variants={item} className="flex gap-20">
