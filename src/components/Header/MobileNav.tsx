@@ -40,7 +40,9 @@ const MobileNavBar: React.FC = () => {
     <nav className="sticky bg-white flex-col lg:hidden">
       <div className="relative py-4 px-6 flex items-center justify-between w-full">
         <div>
-          <img src={Logo} alt="Veloretti" />
+          <Link to={"/"}>
+            <img src={Logo} alt="Veloretti" />
+          </Link>
         </div>
         <div className="flex items-center relative z-10">
           <AnimatePresence>
@@ -97,33 +99,23 @@ const MobileNavBar: React.FC = () => {
             <div className="flex flex-col justify-around py-20 items-center h-full gap-20">
               <div className="">
                 <ul className="flex flex-col gap-20 text-5xl items-center text-neutral-300">
-                  <motion.li 
-                  onClick={() => toggleMobileNav()}
-                  variants={item}>
+                  <motion.li onClick={() => toggleMobileNav()} variants={item}>
                     <Link to={"/"}>Home</Link>
                   </motion.li>
 
-                  <motion.li 
-                  onClick={() => toggleMobileNav()}
-                  variants={item}>
+                  <motion.li onClick={() => toggleMobileNav()} variants={item}>
                     Products
                   </motion.li>
 
-                  <motion.li 
-                  onClick={() => toggleMobileNav()}
-                  variants={item}>
+                  <motion.li onClick={() => toggleMobileNav()} variants={item}>
                     City
                   </motion.li>
 
-                  <motion.li
-                  onClick={() => toggleMobileNav()} 
-                  variants={item}>
+                  <motion.li onClick={() => toggleMobileNav()} variants={item}>
                     <Link to={`about-us`}>About Us</Link>
                   </motion.li>
 
-                  <motion.li 
-                  onClick={() => toggleMobileNav()}
-                  variants={item}>
+                  <motion.li onClick={() => toggleMobileNav()} variants={item}>
                     Contact
                   </motion.li>
                 </ul>
