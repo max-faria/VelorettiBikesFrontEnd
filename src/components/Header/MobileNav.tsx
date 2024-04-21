@@ -37,8 +37,8 @@ const MobileNavBar: React.FC = () => {
   const [mobileNav, toggleMobileNav] = useCycle(false, true);
 
   return (
-    <nav className="sticky bg-white flex-col lg:hidden">
-      <div className="relative py-4 px-6 flex items-center justify-between w-full">
+    <nav className="absolute flex justify-between bg-transparent flex-col lg:hidden z-50 w-full">
+      <div className="relative py-4 px-6 flex items-center justify-between">
         <div>
           <Link to={"/"}>
             <img src={Logo} alt="Veloretti" />

@@ -7,7 +7,12 @@ export default {
   theme: {
     extend: {
       color: {
-        'black2': '#141615'
+        'black2': '#141615',
+        'black-gray': '#141601e3',
+      },
+      backgroundColor: {
+        'blue-flag': '#1E4785',
+        'red-flag': '#AD1D25'
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif']
@@ -21,6 +26,10 @@ export default {
       zIndex: {
         '10':'10',
         '20': '20',
+      },
+      backgroundImage: {
+        'about-us-bg': "url('./src/assets/about-us-bg.png')",
+        'bike-people': "URL('./src/assets/bike-people.png')"
       }
     },
   },
