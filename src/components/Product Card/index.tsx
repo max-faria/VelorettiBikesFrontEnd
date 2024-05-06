@@ -4,15 +4,15 @@ interface ProductCardInterface {
     category: string,
     img: string,
     price: string,
-    submenu1: string,
-    submenu2: string,
+    submenu1?: string,
+    submenu2?: string,
 }
 
 const ProductCard: React.FC<ProductCardInterface> = (props) => {
     const [activeSubmenu, setActiveSubmenu] = useState("submenu1")
 
   return (
-    <div className="bg-light-gray flex flex-col gap-2 py-7 px-7 max-w-lg rounded-lg shadow-lg">
+    <div className="bg-light-gray flex flex-col gap-2 py-7 px-7 max-w-lg rounded-lg shadow-lg cursor-pointer">
       <div className="flex justify-between ">
         <h2 className="text-2xl font-semibold">{props.category}</h2>
         <p className="text-base font-light">From €{props.price}</p>
@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardInterface> = (props) => {
       className="rounded-md"
       src={props.img} alt="Woman with a bike" />
       <div className="flex gap-5 mt-4 items-center">
-        <button className="bg-white rounded-3xl py-2 px-4 text-xs">
+        <button className="bg-neutral-200 rounded-3xl py-2 px-4 text-xs">
           Buy Now
         </button>
         <a href="" className="text-xs underline">
