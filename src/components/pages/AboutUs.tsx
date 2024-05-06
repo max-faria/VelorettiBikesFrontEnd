@@ -8,7 +8,13 @@ import KidBikes from "../../assets/kidbikes.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { A11y, Navigation, Pagination, Parallax, Scrollbar } from "swiper/modules";
+import {
+  A11y,
+  Navigation,
+  Pagination,
+  Parallax,
+  Scrollbar,
+} from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
@@ -89,49 +95,51 @@ const AboutUs = () => {
         like to ride light and have a craving for nostalgia. Our diverse range
         of models and colours cater to riders of all kinds.
       </p>
-
-      <div className="py-10 pl-10 flex justify-around gap-7">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Parallax]}
-          spaceBetween={30}
-          slidesPerView={2.3}
-          navigation
+          spaceBetween={5}
+          slidesPerView={1}
           scrollbar={{ draggable: true }}
-          parallax={true}
-          
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 5,
+              navigation: false,
+            },
+            1024: {
+              slidesPerView: 2.3,
+              spaceBetween: 30,
+              navigation: true,
+            },
+          }}
         >
-            <SwiperSlide  >
-              <ProductCard
-                img={ElectricIvy}
-                category="Electric Bikes"
-                submenu1="Electric"
-                submenu2="Ivy Electric Ace 2"
-                price="3.299"
-                
-              />
-            </SwiperSlide>
-          <SwiperSlide  >
+          <SwiperSlide>
+            <ProductCard
+              img={ElectricIvy}
+              category="Electric Bikes"
+              submenu1="Electric"
+              submenu2="Ivy Electric Ace 2"
+              price="3.299"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
             <ProductCard
               img={CityBikes}
               category="City Bikes"
               submenu1="Men"
               submenu2="Woman"
               price="399"
-             
-              
             />
           </SwiperSlide>
-          <SwiperSlide >
+          <SwiperSlide>
             <ProductCard
               img={KidBikes}
               category="Kid's Bikes"
               submenu1="Ages 1.5 to 8"
               price="299"
-              
             />
           </SwiperSlide>
         </Swiper>
-      </div>
     </div>
   );
 };

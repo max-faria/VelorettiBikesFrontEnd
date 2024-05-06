@@ -12,14 +12,14 @@ const ProductCard: React.FC<ProductCardInterface> = (props) => {
   const [activeSubmenu, setActiveSubmenu] = useState("submenu1");
 
   return (
-    <div className="bg-light-gray flex flex-col gap-2 py-7 px-7 max-w-lg rounded-lg shadow-lg hover:scale-105 ease-in-out duration-300 my-10 mx-10">
+    <div className="bg-light-gray flex flex-col gap-2 py-5 px-5 max-w-lg lg:p-7 rounded-lg shadow-lg sm:hover:scale-105 sm:ease-in-out sm:duration-300 my-5 mx-5 md:my-10 md:mx-10">
       
-      <div className="flex justify-between">
-        <h2 className="text-2xl font-semibold">{props.category}</h2>
-        <p className="text-base font-light">From €{props.price}</p>
+      <div className="flex flex-col lg:flex-row lg:justify-between">
+        <h2 className="text-md font-semibold lg:text-xl">{props.category}</h2>
+        <p className="text-xs font-light lg:text-base">From €{props.price}</p>
       </div>
 
-      <div className="flex gap-5 font-extralight">
+      <div className="flex gap-5 font-light text-xs lg:text-base">
         <p
           className={`cursor-pointer ${
             activeSubmenu === "submenu1"
@@ -45,7 +45,7 @@ const ProductCard: React.FC<ProductCardInterface> = (props) => {
       <img className="rounded-md" src={props.img} alt="Woman with a bike" />
 
       <div className="flex gap-5 mt-4 items-center">
-        <button className="bg-neutral-200 rounded-3xl py-2 px-4 text-xs">
+        <button className="bg-neutral-200 rounded-3xl py-2 px-2 text-xs lg:px-3">
           Buy Now
         </button>
         <a href="" className="text-xs underline">
