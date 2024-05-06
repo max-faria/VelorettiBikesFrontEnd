@@ -1,6 +1,9 @@
 import LogoWhite from "../../assets/logo-white.svg";
 import Image1 from "../../assets/aboutus-1.png";
 import Image2 from "../../assets/aboutus-2.png";
+import ProductCard from "../Product Card";
+import ElectricIvy from "../../assets/electricivy.png";
+import CityBikes from "../../assets/citybikes.png"
 
 const AboutUs = () => {
   return (
@@ -79,6 +82,10 @@ const AboutUs = () => {
         like to ride light and have a craving for nostalgia. Our diverse range
         of models and colours cater to riders of all kinds.
       </p>
+      <div className="py-10 px-10 flex justify-around">
+        <ProductCard img={ElectricIvy} category="Electric bikes"submenu1="Electric" submenu2="Ivy Electric Ace 2"price="3.299"/>
+        <ProductCard img={CityBikes} category="City Bikes" submenu1="Men" submenu2="Woman" price="399"/>
+      </div>
     </div>
   );
 };

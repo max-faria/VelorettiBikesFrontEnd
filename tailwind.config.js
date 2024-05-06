@@ -12,7 +12,8 @@ export default {
       },
       backgroundColor: {
         'blue-flag': '#1E4785',
-        'red-flag': '#AD1D25'
+        'red-flag': '#AD1D25',
+        'light-gray': '#C4C4C4',
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif']
