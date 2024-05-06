@@ -97,35 +97,37 @@ const AboutUs = () => {
           slidesPerView={2.3}
           navigation
           scrollbar={{ draggable: true }}
-          className="overflow-visible"
           parallax={true}
           
         >
-            <SwiperSlide style={{overflow: 'visible'}} >
+            <SwiperSlide  >
               <ProductCard
                 img={ElectricIvy}
                 category="Electric Bikes"
                 submenu1="Electric"
                 submenu2="Ivy Electric Ace 2"
                 price="3.299"
+                
               />
             </SwiperSlide>
-          <SwiperSlide className="overflow-clip" >
+          <SwiperSlide  >
             <ProductCard
               img={CityBikes}
               category="City Bikes"
               submenu1="Men"
               submenu2="Woman"
               price="399"
+             
               
             />
           </SwiperSlide>
-          <SwiperSlide className="overflow-clip" >
+          <SwiperSlide >
             <ProductCard
               img={KidBikes}
               category="Kid's Bikes"
               submenu1="Ages 1.5 to 8"
               price="299"
+              
             />
           </SwiperSlide>
         </Swiper>
