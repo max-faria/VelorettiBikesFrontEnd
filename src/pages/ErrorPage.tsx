@@ -1,5 +1,5 @@
 import { Link, useRouteError } from "react-router-dom";
-import PageNotFound from '../../assets/2456051.jpg'
+import PageNotFound from '../assets/2456051.jpg'
 
 interface RouteError {
   statusText?: string;

@@ -1,10 +1,10 @@
-import LogoWhite from "../../assets/logo-white.svg";
-import Image1 from "../../assets/aboutus-1.png";
-import Image2 from "../../assets/aboutus-2.png";
-import ProductCard from "../Product Card";
-import ElectricIvy from "../../assets/electricivy.png";
-import CityBikes from "../../assets/citybikes.png";
-import KidBikes from "../../assets/kidbikes.png";
+import LogoWhite from "../assets/logo-white.svg";
+import Image1 from "../assets/aboutus-1.png";
+import Image2 from "../assets/aboutus-2.png";
+import ProductCard from "../components/Product Card";
+import ElectricIvy from "../assets/electricivy.png";
+import CityBikes from "../assets/citybikes.png";
+import KidBikes from "../assets/kidbikes.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
