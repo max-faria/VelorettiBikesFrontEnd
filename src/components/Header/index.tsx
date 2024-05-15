@@ -1,11 +1,15 @@
 import { ShoppingBag, User } from "@phosphor-icons/react";
 import Logo from "../../assets/logo.svg";
 import MobileNavBar from "./MobileNav";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation()
+  const path = location.pathname
+
   return (
     <header className="font-sans">
-      <nav className=" absolute bg-transparent mx-auto lg:flex py-4 px-10 justify-between items-center lg:px-20 hidden w-full">
+      <nav className={`${path === '/about-us' ? 'bg-transparent' : 'bg-white'} absolute mx-auto lg:flex py-4 px-10 justify-between items-center lg:px-20 hidden w-full`}>
         
           <div className=" basis-1/5">
             <img src={Logo} alt="Veloretti" />
@@ -13,7 +17,7 @@ const Header = () => {
           <div className="flex basis-2/5">
             <ul className="flex gap-8 text-black">
               <li>
-                <a href="">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
                 <a href="">Products</a>
@@ -22,7 +26,7 @@ const Header = () => {
                 <a href="">City</a>
               </li>
               <li>
-                <a href="">About Us</a>
+                <a href="/about-us">About Us</a>
               </li>
               <li>
                 <a href="">Contact</a>
