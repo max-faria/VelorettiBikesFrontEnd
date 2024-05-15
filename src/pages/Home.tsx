@@ -1,7 +1,7 @@
 import LogoWhite from "../assets/logo-white.svg";
 import GuyBike from "../assets/guy-home.png";
-import BikeEmployee from "../assets/bike-image.jpeg.png"
-import BikeClose from "../assets/bike-close.png"
+import BikeEmployee from "../assets/bike-image.jpeg.png";
+import BikeClose from "../assets/bike-close.png";
 
 const Home = () => {
   return (
@@ -64,15 +64,28 @@ const Home = () => {
       </div>
 
       <div className="py-10 px-10 md:flex md:items-center">
-        <div className="md:flex md:flex-col md:basis-1/2 lg:px-36 md:px-16  ">
-          <h2 className="text-3xl text-black-gray w-50">Part of Pon.Bike</h2>
-          <p className="mt-5 text-sm text-justify">
-            Veloretti was founded in Amsterdam in 2012 with a mission to make
-            clean, timeless bikes that are great quality and delivered to your
-            door at a fair price. We are proud to now be part of Pon.Bike, the
-            world-leading family of bike brands. With this support, we can
-            continue to evolve our designs, take care of our riders, and help
-            keep their bikes on the road.
+        <div className="md:flex md:flex-col md:basis-1/2 lg:px-36 md:px-16 ">
+          <h2 className="text-3xl text-black-gray w-50 mb-5">How it works</h2>
+          <p className="text-xl mb-1">Register your company</p>
+          <p className="text-sm mb-3 text-gray-500 ml-4 ">
+            Fill in our registration form with your company details. After your
+            registration, our leasing partner will do a credit check. You will
+            hear whether your application has been approved within 24 hours.
+          </p>
+          <p className="text-xl mb-1">Determine the requirements</p>
+          <p className="text-sm mb-3 text-gray-500 ml-4">
+            You get access to the digital platform. Set the requirements for
+            your employees and share the registration link.
+          </p>
+          <p className="text-xl mb-1">Ride your bike!</p>
+          <p className="text-sm mb-3 text-gray-500 ml-4">
+            Let's go! Your employees can choose their bikes and they'll be
+            delivered straight to their homes.
+          </p>
+          <p className="text-xl mb-1">Administration</p>
+          <p className="text-sm mb-3 text-gray-500 ml-4">
+            Everything in one place. The digital platform gives you an easy
+            overview of all the information for your payroll.
           </p>
         </div>
         <div className="h-max-fit md:items-center">
