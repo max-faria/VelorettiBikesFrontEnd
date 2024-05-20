@@ -14,6 +14,7 @@ export default {
         'blue-flag': '#1E4785',
         'red-flag': '#AD1D25',
         'light-gray': '#C4C4C4',
+        'light-gray2': '#EBEDEE',
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif']

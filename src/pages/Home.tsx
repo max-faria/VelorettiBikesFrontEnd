@@ -2,11 +2,12 @@ import LogoWhite from "../assets/logo-white.svg";
 import GuyBike from "../assets/guy-home.png";
 import BikeEmployee from "../assets/bike-image.jpeg.png";
 import BikeClose from "../assets/bike-close.png";
+import BikeCard from "../components/BikeCard/BikeCard";
 
 const Home = () => {
   return (
     <div className="bg-white">
-      <div className="bg-hero-section bg-cover bg-no-repeat lg:bg-cover lg:h-screen text-white">
+      <div className="bg-hero-section bg-cover bg-no-repeat lg:bg-cover lg:h-screen text-white w-full">
         <div className="relative top-24 py-40 px-10 items-start lg:top-60 lg:px-10">
           <div className="w-14 lg:w-28">
             <img src={LogoWhite} alt="" className="w-full" />
@@ -17,7 +18,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-neutral-300 py-12 px-10 md:flex md:items-center">
+      <div className=" py-12 px-10 md:flex md:items-center">
         <div className="md:basis-1/2 hidden md:block">
           <img src={GuyBike} alt="" className="w-full relative" />
         </div>
@@ -91,6 +92,10 @@ const Home = () => {
         <div className="h-max-fit md:items-center">
           <img src={BikeClose} alt="" className="max-w-md" />
         </div>
+      </div>
+
+      <div>
+        <BikeCard/>
       </div>
     </div>
   );
