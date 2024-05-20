@@ -29,6 +29,9 @@ export default {
         '10':'10',
         '20': '20',
       },
+      maxWidth: {
+        695: '495px',
+      },
       backgroundImage: {
         'about-us-bg': "url('./src/assets/about-us-bg.png')",
         'bike-people': "URL('./src/assets/bike-people.png')",

@@ -94,7 +94,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
+      <div className="lg:px-10 lg:py-10 max-w-7xl">
         <BikeCard/>
       </div>
     </div>

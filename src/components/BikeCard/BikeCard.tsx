@@ -3,7 +3,7 @@ import EletricAce from "../../assets/eletricace.png";
 
 const BikeCard = () => {
   return (
-    <div className="container flex flex-col gap-10 max-w- bg-light-gray2 p-8 text-sans items-center">
+    <div className="container flex flex-col gap-10 max-w-695 bg-light-gray2 p-8 text-sans items-center basis-2 rounded-xl">
       <div className="flex justify-between items-center w-full">
         <p className="text-xl">Electric Ace</p>
         <p className="text-xs font-thin">€69,07 NET/MONTH</p>
