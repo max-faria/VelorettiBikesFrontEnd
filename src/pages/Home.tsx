@@ -96,19 +96,29 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="lg:px-10 lg:py-10 flex justify-around">
+      <div className="lg:px-10 lg:py-10 md:flex-row flex-col flex gap-10 p-5 md:justify-around">
         <BikeCard
         title="Electric Ace"
         price="69,07"
         photo={EletricAce}
         color={["#000000", "#606160", "#DDD9CD"]}
+        colorToImage={{
+          "#000000": `${EletricAce}`,
+          "#606160": `${EletricIvy}`,
+          "#DDD9CD": `${EletricAce}`,
+         }}
         />
 
         <BikeCard
-        title="Electric Ace"
+        title="Electric Ivy"
         price="69,07"
         photo={EletricIvy}
         color={["#000000", "#606160", "#DDD9CD"]}
+        colorToImage={{
+          "#000000": `${EletricIvy}`,
+          "#606160": `${EletricAce}`,
+          "#DDD9CD": `${EletricIvy}`,
+        }}
         />
       </div>
     </div>

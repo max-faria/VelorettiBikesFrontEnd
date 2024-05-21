@@ -14,7 +14,7 @@ export default function ErrorPage() {
   return (
     <div
       id="error-page"
-      className="flex flex-col py-16 items-center bg-white h-screen gap-2"
+      className="flex flex-col py-16 items-center bg-white max-h-screen gap-2"
     >
       <div className="flex flex-col items-center gap-1">
         <h1>Oops!</h1>
@@ -25,12 +25,12 @@ export default function ErrorPage() {
       </div>
       <div className="p-10">
         <img
-        className="rounded-md" 
+        className="rounded-md max-w-695" 
         src={PageNotFound} alt="" />
       </div>
       <div>
         <button className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded">
-          <Link to={"/"}>Back Home</Link>
+          <Link to="/">Back Home</Link>
         </button>
       </div>
     </div>
