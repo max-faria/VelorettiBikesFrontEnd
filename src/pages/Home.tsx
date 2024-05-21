@@ -3,6 +3,8 @@ import GuyBike from "../assets/guy-home.png";
 import BikeEmployee from "../assets/bike-image.jpeg.png";
 import BikeClose from "../assets/bike-close.png";
 import BikeCard from "../components/BikeCard/BikeCard";
+import EletricAce from "../assets/eletricace.png"
+import EletricIvy from "../assets/eletricivycard.png"
 
 const Home = () => {
   return (
@@ -94,8 +96,20 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="lg:px-10 lg:py-10 max-w-7xl">
-        <BikeCard/>
+      <div className="lg:px-10 lg:py-10 flex justify-around">
+        <BikeCard
+        title="Electric Ace"
+        price="69,07"
+        photo={EletricAce}
+        color={["#000000", "#606160", "#DDD9CD"]}
+        />
+
+        <BikeCard
+        title="Electric Ace"
+        price="69,07"
+        photo={EletricIvy}
+        color={["#000000", "#606160", "#DDD9CD"]}
+        />
       </div>
     </div>
   );
