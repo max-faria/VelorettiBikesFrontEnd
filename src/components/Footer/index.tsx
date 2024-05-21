@@ -1,14 +1,13 @@
 const Footer: React.FC = () => {
   return (
     <footer className="font-sans bg-black text-neutral-300 p-10">
-      <div className="flex">
-        <div className="flex basis-1/2 justify-between">
+      <div className="flex flex-col gap-10 md:flex-row">
+        <div className="flex flex-col gap-8 basis-1/2 justify-between md:flex-row">
           <div>
             <table>
               <thead className="text-xl">
                 <tr>Explorer</tr>
               </thead>
-              <br />
               <tbody className="text-sm text-neutral-300/60">
                 <tr>Eletric Bikes</tr>
                 <tr>City Bikes</tr>
@@ -26,7 +25,6 @@ const Footer: React.FC = () => {
               <thead className="text-xl">
                 <tr>About</tr>
               </thead>
-              <br />
               <tbody className="text-sm text-neutral-300/60">
                 <tr>About Us</tr>
                 <tr>Journal</tr>
@@ -41,7 +39,6 @@ const Footer: React.FC = () => {
               <thead className="text-xl">
                 <tr>Help</tr>
               </thead>
-              <br />
               <tbody className="text-sm text-neutral-300/60">
                 <tr>Contact</tr>
                 <tr>FAQ</tr>
@@ -54,7 +51,7 @@ const Footer: React.FC = () => {
             </table>
           </div>
         </div>
-        <div className="flex flex-col flex-1 pl-20 gap-5 items-center">
+        <div className="flex flex-col md:flex-1 md:pl-20 gap-5 items-center">
           <div className="flex flex-col gap-5">
             <p className="text-xl">Join the ride.</p>
             <p className="text-sm">Sign up for our newsletter.</p>
