@@ -95,14 +95,16 @@ const AboutUs = () => {
         like to ride light and have a craving for nostalgia. Our diverse range
         of models and colours cater to riders of all kinds.
       </p>
+      <div className="">
+
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Parallax]}
           spaceBetween={5}
-          slidesPerView={1}
+          slidesPerView={1.3}
           scrollbar={{ draggable: true }}
           breakpoints={{
             320: {
-              slidesPerView: 1,
+              slidesPerView: 1.3,
               spaceBetween: 5,
               navigation: false,
             },
@@ -140,6 +142,7 @@ const AboutUs = () => {
             />
           </SwiperSlide>
         </Swiper>
+      </div>
     </div>
   );
 };
