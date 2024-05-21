@@ -99,13 +99,13 @@ const AboutUs = () => {
 
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Parallax]}
-          spaceBetween={5}
-          slidesPerView={1.3}
+          spaceBetween={3}
+          slidesPerView={1.1}
           scrollbar={{ draggable: true }}
           breakpoints={{
             320: {
-              slidesPerView: 1.3,
-              spaceBetween: 5,
+              slidesPerView: 1.1,
+              spaceBetween: 3,
               navigation: false,
             },
             1024: {
