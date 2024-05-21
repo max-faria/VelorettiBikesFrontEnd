@@ -68,7 +68,9 @@ const Home = () => {
 
       <div className="md:py-10 px-10 md:flex md:items-center flex flex-col md:flex-row gap-10">
         <div className="flex flex-col md:basis-1/2 lg:px-36 md:px-16 gap-2">
-          <h2 className="text-3xl text-black-gray w-50 mb-5 text-center">How it works</h2>
+          <h2 className="text-3xl text-black-gray w-50 mb-5 text-center">
+            How it works
+          </h2>
           <div>
             <p className="text-xl mb-1">Register your company</p>
             <p className="text-sm mb-3 text-gray-500 text-justify ">
@@ -129,6 +131,34 @@ const Home = () => {
             "#DDD9CD": `${EletricIvy}`,
           }}
         />
+      </div>
+
+      <div className="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" defaultChecked />
+        <div className="collapse-title text-xl font-medium">
+          Click to open this one and close others
+        </div>
+        <div className="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+      <div className="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div className="collapse-title text-xl font-medium">
+          Click to open this one and close others
+        </div>
+        <div className="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+      <div className="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div className="collapse-title text-xl font-medium">
+          Click to open this one and close others
+        </div>
+        <div className="collapse-content">
+          <p>hello</p>
+        </div>
       </div>
     </div>
   );

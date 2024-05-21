@@ -31,7 +31,7 @@ const BikeCard: React.FC<BikeCard> = (props) => {
       };
 
   return (
-    <div className="container flex flex-col gap-10 max-w-695 bg-light-gray2  md:p-6 p-5 text-sans items-center rounded-xl">
+    <div className="container flex flex-col gap-4 max-w-695 bg-light-gray2 md:p-6 p-5 text-sans items-center rounded-xl">
       <div className="flex justify-between items-center w-full">
         <p className="text-xl font-semibold basis-2/3">{props.title}</p>
         <p className=" text-xs lg:text-sm font-light text-right basis-1/3">€{props.price} NET/MONTH</p>
