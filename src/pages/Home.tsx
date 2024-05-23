@@ -8,7 +8,7 @@ import EletricIvy from "../assets/eletricivycard.png";
 
 const Home = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white antialiased">
       <div className="bg-hero-section bg-cover bg-center bg-no-repeat lg:bg-cover lg:h-screen text-white w-full">
         <div className="relative top-24 py-40 px-10 items-start lg:top-60 lg:px-10">
           <div className="w-14 lg:w-28">
@@ -20,7 +20,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className=" py-12 px-10 md:flex md:items-center">
+      <div className=" py-12 px-5 md:flex md:items-center">
         <div className="md:basis-1/2 hidden md:block">
           <img src={GuyBike} alt="" className="w-full relative" />
         </div>
@@ -37,7 +37,7 @@ const Home = () => {
       </div>
 
       <div className="bg-maintenance-section bg-cover bg-no-repeat lg:bg-cover lg:h-screen text-white">
-        <div className="relative top-24 py-40 px-10 items-start lg:top-38 lg:px-10 md:max-w-lg">
+        <div className="relative top-24 py-40 px-5 items-start lg:top-38 lg:px-10 md:max-w-lg">
           <h2 className="text-4xl lg:text-5xl">
             Service, maintenance and insurance
           </h2>
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-12 px-10 md:flex md:items-center">
+      <div className="py-12 px-5 md:flex md:items-center">
         <div className="md:basis-1/2 hidden md:block md:max-w-xl">
           <img src={BikeEmployee} alt="" className="w-full relative" />
         </div>
@@ -107,7 +107,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="px-10 py-10 md:flex-row flex-col flex gap-10 p-5 md:justify-around">
+      <div className="px-5 py-10 md:flex-row flex-col flex gap-10 p-5 md:justify-around">
         <BikeCard
           title="Electric Ace"
           price="69,07"
@@ -133,31 +133,50 @@ const Home = () => {
         />
       </div>
 
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" defaultChecked />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+      <div className="mx-5">
+        <div className="collapse collapse-arrow bg-white border-b border-gray-300 rounded-none">
+          <input type="radio" name="my-accordion-2" defaultChecked />
+          <div className="collapse-title text-xl font-medium">
+            What about the paperwork?
+          </div>
+          <div className="collapse-content text-sm">
+            <p>
+              The bicycle plan is set up so that there will be no administrative
+              work on your part as the employer. You can use a free online
+              platform that has been created by our leasing partner. This
+              provides you with a simple overview of your business and your
+              employees, allowing you to arrange everything. It also simplifies
+              all the paperwork. Everything is organised with just a few clicks.
+            </p>
+          </div>
         </div>
-        <div className="collapse-content">
-          <p>hello</p>
+        <div className="collapse collapse-arrow bg-white border-b border-gray-300 rounded-none">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title text-xl font-medium">
+            How does it work with an employee who retires early?{" "}
+          </div>
+          <div className="collapse-content">
+            <p>hello</p>
+          </div>
         </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+        <div className="collapse collapse-arrow bg-white border-b border-gray-300 rounded-none">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title text-xl font-medium">
+            How is the insurance & maintenance arranged when leasing a Veloretti
+            bike?{" "}
+          </div>
+          <div className="collapse-content">
+            <p>hello</p>
+          </div>
         </div>
-        <div className="collapse-content">
-          <p>hello</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
-        <div className="collapse-content">
-          <p>hello</p>
+        <div className="collapse collapse-arrow bg-white border-b border-gray-300 rounded-none">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title text-xl font-medium">
+            What are the legal requirements for the Veloretti bicycle plan?{" "}
+          </div>
+          <div className="collapse-content">
+            <p>hello</p>
+          </div>
         </div>
       </div>
     </div>
