@@ -116,7 +116,7 @@ const MobileNavBar: React.FC = () => {
                   </motion.li>
 
                   <motion.li onClick={() => toggleMobileNav()} variants={item}>
-                    Contact
+                    <Link to={'contact-us'}>Contact</Link>
                   </motion.li>
                 </ul>
               </div>
