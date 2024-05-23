@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="bg-white antialiased">
       <div className="bg-hero-section bg-cover bg-center bg-no-repeat lg:bg-cover lg:h-screen text-white w-full">
-        <div className="relative top-24 py-40 px-10 items-start lg:top-60 lg:px-10">
+        <div className="relative top-24 py-40 px-5 items-start lg:top-60 lg:px-10">
           <div className="w-14 lg:w-28">
             <img src={LogoWhite} alt="" className="w-full" />
           </div>
@@ -133,7 +133,7 @@ const Home = () => {
         />
       </div>
 
-      <div className="mx-5 py-16 md:mx-36 md:py-20">
+      <div className="mx-5 py-4 md:mx-36 md:py-20">
         <div className="collapse collapse-arrow bg-white border-b border-gray-300 rounded-none">
           <input type="radio" name="my-accordion-2" defaultChecked />
           <div className="collapse-title text-xl font-medium">

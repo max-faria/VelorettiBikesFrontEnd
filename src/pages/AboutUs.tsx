@@ -22,7 +22,7 @@ const AboutUs = () => {
   return (
     <div className="antialiased bg-neutral-300">
       <div className="bg-about-us-bg bg-cover bg-no-repeat text-white flex flex-col lg:bg-cover lg:h-screen">
-        <div className="relative top-24 py-40 px-10 items-start lg:top-80 lg:px-10">
+        <div className="relative top-24 py-40 px-5 items-start lg:top-80 lg:px-10">
           <div className="w-14 lg:w-28">
             <img src={LogoWhite} alt="" className="w-full" />
           </div>
@@ -31,7 +31,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="bg-neutral-300 py-10 px-10 md:flex md:items-center">
+      <div className="bg-neutral-300 py-10 px-5 md:flex md:items-center">
         <div className="md:basis-1/2 hidden md:block">
           <img src={Image1} alt="" className="w-full relative" />
         </div>
@@ -49,7 +49,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="py-10 px-10 md:flex md:items-center">
+      <div className="py-10 px-5 md:flex md:items-center">
         <div className="md:flex md:flex-col md:basis-1/2 lg:px-36 md:px-16  ">
           <h2 className="text-3xl text-black-gray w-50">Part of Pon.Bike</h2>
           <p className="mt-5 text-sm text-justify">
@@ -88,7 +88,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <p className="text-sm text-justify py-5 px-10 md:hidden">
+      <p className="text-sm text-justify py-5 px-5 md:hidden">
         Elevate your ride with a bicycle that mirrors your unique style and
         personality. From an Ace Two electric bike with the latest technology
         packed into a minimalist design, or a bright yellow Berlin for those who
