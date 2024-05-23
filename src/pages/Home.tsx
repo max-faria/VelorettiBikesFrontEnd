@@ -107,7 +107,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="px-5 py-10 md:flex-row flex-col flex gap-10 p-5 md:justify-around">
+      <div className="px-5 py-10 md:flex-row items-center flex-col flex gap-10 p-5 md:justify-evenly">
         <BikeCard
           title="Electric Ace"
           price="69,07"
@@ -133,7 +133,7 @@ const Home = () => {
         />
       </div>
 
-      <div className="mx-5">
+      <div className="mx-5 py-16 md:mx-36 md:py-20">
         <div className="collapse collapse-arrow bg-white border-b border-gray-300 rounded-none">
           <input type="radio" name="my-accordion-2" defaultChecked />
           <div className="collapse-title text-xl font-medium">
