@@ -33,6 +33,7 @@ export default {
       },
       maxWidth: {
         695: '495px',
+        0.8: '80%',
       },
       backgroundImage: {
         'about-us-bg': "url('./src/assets/about-us-bg.png')",

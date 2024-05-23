@@ -1,3 +1,5 @@
+import { ArrowUp } from "@phosphor-icons/react";
+
 const Footer: React.FC = () => {
   return (
     <footer className="font-sans bg-black text-neutral-300 p-10">
@@ -51,11 +53,19 @@ const Footer: React.FC = () => {
             </table>
           </div>
         </div>
-        <div className="flex flex-col md:flex-1 md:pl-20 gap-5 items-center">
-          <div className="flex flex-col gap-5">
-            <p className="text-xl">Join the ride.</p>
+        <div className="flex flex-col md:flex-1 md:pl-20 gap-5 items-end">
+          <div className="flex flex-col gap-5 w-full">
+            <div className="flex justify-between">
+              <p className="text-xl">Join the ride.</p>
+              <button
+                className="bg-white rounded-full p-1"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                <ArrowUp size={25} color="black" />
+              </button>
+            </div>
             <p className="text-sm">Sign up for our newsletter.</p>
-            <div className="flex">
+            <div className="flex max-w-0.8">
               <input
                 type="email"
                 placeholder="Enter your email address here"
