@@ -1,5 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import ContactUsImg from "../assets/contactus.png";
+import axios from "axios";
 interface InterfaceFormInput {
   name: string;
   email: string;
@@ -13,8 +14,16 @@ const ContactUs: React.FC = () => {
     formState: { errors },
   } = useForm<InterfaceFormInput>();
 
-  const onSubmit: SubmitHandler<InterfaceFormInput> = (data) => {
+  const onSubmit: SubmitHandler<InterfaceFormInput> = async (data) => {
     console.log(data);
+
+    try {
+      const response = await axios.post("http://localhost:5287/api/contact", data)
+      console.log(response.data)
+
+    } catch (err) {
+      console.error("There was a problem with the request", err)
+    }
   };
 
   return (
@@ -31,7 +40,7 @@ const ContactUs: React.FC = () => {
                 Nome
               </label>
               <input
-                id="name"
+                id="Name"
                 type="text"
                 {...register("name", { required: "Name is required!" })}
                 className={`mt-1 block w-full p-2 border bg-inherit  hover:border-1 hover:border-gray-700 focus:border-1 focus:border-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-500 ${
