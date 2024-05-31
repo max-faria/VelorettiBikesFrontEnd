@@ -31,7 +31,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="bg-neutral-300 py-10 px-5 md:flex md:items-center">
+      <div className="bg-neutral-300 py-10 px-5 md:px-16 md:flex md:items-center">
         <div className="md:basis-1/2 hidden md:block">
           <img src={Image1} alt="" className="w-full relative" />
         </div>
@@ -49,7 +49,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="py-10 px-5 md:flex md:items-center">
+      <div className="py-10 px-5 md:flex md:px-16 md:items-center">
         <div className="md:flex md:flex-col md:basis-1/2 lg:px-36 md:px-16  ">
           <h2 className="text-3xl text-black-gray w-50">Part of Pon.Bike</h2>
           <p className="mt-5 text-sm text-justify">
@@ -76,7 +76,7 @@ const AboutUs = () => {
         </h2>
       </div>
       <div className="bg-bike-people bg-cover items-end flex justify-center py-10 h-96 sm:justify-end sm:py-5 md:h-screen md:bg-cover">
-        <div className="relative text-neutral-300 text-center flex justify-center sm:flex sm:flex-col sm:w-96 sm:justify-end sm:items-end sm:px-10">
+        <div className="relative text-neutral-300 text-center flex justify-center sm:flex sm:flex-col sm:w-96 sm:justify-end sm:items-end sm:px-16">
           <h2 className="text-4xl font-semibold lg:text-4xl">Made for you.</h2>
           <p className="hidden md:block sm:text-sm sm:text-justify sm:w-60">
             Elevate your ride with a bicycle that mirrors your unique style and

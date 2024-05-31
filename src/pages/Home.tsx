@@ -20,7 +20,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className=" py-12 px-5 md:flex md:items-center">
+      <div className=" py-12 px-5 md:flex md:items-center md:px-16">
         <div className="md:basis-1/2 hidden md:block">
           <img src={GuyBike} alt="" className="w-full relative" />
         </div>
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-12 px-5 md:flex md:items-center">
+      <div className="py-12 px-5 md:flex md:items-center md:px-16">
         <div className="md:basis-1/2 hidden md:block md:max-w-xl">
           <img src={BikeEmployee} alt="" className="w-full relative" />
         </div>
