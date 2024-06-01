@@ -31,7 +31,7 @@ const ContactForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5287/api/contact",
+        "https://sls32yxqui.execute-api.us-east-1.amazonaws.com/Prod/api/contact",
         data
       );
       setIsSuccess(true);
