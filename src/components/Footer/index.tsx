@@ -8,47 +8,47 @@ const Footer: React.FC = () => {
           <div>
             <table>
               <thead className="text-xl">
-                <tr>Explorer</tr>
+                <tr><td>Explorer</td></tr>
               </thead>
               <tbody className="text-sm text-neutral-300/60">
-                <tr>Eletric Bikes</tr>
-                <tr>City Bikes</tr>
-                <tr>kid's Bikes</tr>
-                <tr>Acessories</tr>
-                <tr>Outlet</tr>
-                <tr>Bussines</tr>
-                <tr>Insurance Eletric</tr>
-                <tr>Size Guide</tr>
+                <tr><td>Eletric Bikes</td></tr>
+                <tr><td>City Bikes</td></tr>
+                <tr><td>kid's Bikes</td></tr>
+                <tr><td>Acessories</td></tr>
+                <tr><td>Outlet</td></tr>
+                <tr><td>Bussines</td></tr>
+                <tr><td>Insurance Eletric</td></tr>
+                <tr><td>Size Guide</td></tr>
               </tbody>
             </table>
           </div>
           <div>
             <table>
               <thead className="text-xl">
-                <tr>About</tr>
+                <tr><td>About</td></tr>
               </thead>
               <tbody className="text-sm text-neutral-300/60">
-                <tr>About Us</tr>
-                <tr>Journal</tr>
-                <tr>Reviews</tr>
-                <tr>Press</tr>
-                <tr>Jobs</tr>
+                <tr><td>About Us</td></tr>
+                <tr><td>Journal</td></tr>
+                <tr><td>Reviews</td></tr>
+                <tr><td>Press</td></tr>
+                <tr><td>Jobs</td></tr>
               </tbody>
             </table>
           </div>
           <div>
             <table>
               <thead className="text-xl">
-                <tr>Help</tr>
+                <tr><td>Help</td></tr>
               </thead>
               <tbody className="text-sm text-neutral-300/60">
-                <tr>Contact</tr>
-                <tr>FAQ</tr>
-                <tr>Delivery</tr>
-                <tr>Assembly & manuals</tr>
-                <tr>Payment options</tr>
-                <tr>Privacy policy</tr>
-                <tr>Terms & conditions</tr>
+                <tr><td>Contact</td></tr>
+                <tr><td>FAQ</td></tr>
+                <tr><td>Delivery</td></tr>
+                <tr><td>Assembly & manuals</td></tr>
+                <tr><td>Payment options</td></tr>
+                <tr><td>Privacy policy</td></tr>
+                <tr><td>Terms & conditions</td></tr>
               </tbody>
             </table>
           </div>

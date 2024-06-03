@@ -2,6 +2,7 @@ import { ShoppingBag, User } from "@phosphor-icons/react";
 import Logo from "../../assets/logo.svg";
 import MobileNavBar from "./MobileNav";
 import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "../ToggleTheme";
 
 const Header = () => {
   const location = useLocation();
@@ -43,6 +44,7 @@ const Header = () => {
           <Link to="/cart">
             <ShoppingBag size={20} color="#141615" />
           </Link>
+          <ThemeToggle/>
         </div>
       </nav>
 

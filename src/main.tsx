@@ -2,14 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // import App from './App.tsx'
 import "./index.css";
-import { RouterProvider } from "react-router-dom";
-import router from "./routes/route.tsx";
+// import { RouterProvider } from "react-router-dom";
+// import router from "./routes/route.tsx";
+import App from "./App.tsx";
+import { themeSlice } from "./Features/Theme/ThemeSlice.ts";
+import { Provider } from "react-redux";
+import { store } from "./App/store.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div className="content-wrapper">
-      <RouterProvider router={router} />
-    </div>
-    {/* <App /> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
