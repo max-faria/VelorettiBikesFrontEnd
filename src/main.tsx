@@ -5,7 +5,6 @@ import "./index.css";
 // import { RouterProvider } from "react-router-dom";
 // import router from "./routes/route.tsx";
 import App from "./App.tsx";
-import { themeSlice } from "./Features/Theme/ThemeSlice.ts";
 import { Provider } from "react-redux";
 import { store } from "./App/store.ts";
 
