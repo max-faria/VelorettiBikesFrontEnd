@@ -20,7 +20,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}`,
+        `${import.meta.env.VITE_BASE_URL}/user/login`,
         data
       );
       console.log(response.data);
@@ -54,15 +54,13 @@ const Login = () => {
               }`}
               type="email"
               id="email"
-              {...register("email", {
-                required: "Email is required",
-              })}
+              {...register("email", {required: "Email is required"})}
             />
              {errors.email && (
-              <span className="text-red-500 text-sm">
-                {errors.email.message}
-              </span>
-            )}
+                <span className="text-red-500 text-sm">
+                    {errors.email.message}
+                </span>
+             )}
           </div>
           <div className="mb-6">
             <label
