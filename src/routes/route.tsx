@@ -5,7 +5,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import ContactUs from "../pages/ContactUs";
 import Login from "../pages/Login";
-import Singup from "../pages/Sigup";
+import Singup from "../pages/Singup";
 
 const router = createBrowserRouter([
   {

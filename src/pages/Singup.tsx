@@ -42,7 +42,7 @@ const Singup: React.FC = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/user/signup`,
-        data
+        submissionData
       );
       setIsSuccess(true);
       console.log(response.data);
@@ -50,10 +50,11 @@ const Singup: React.FC = () => {
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         setErrorMessage(error.response.data.message || "Sign-up Failed");
+        console.log(error.response.data.message)
       } else {
         setErrorMessage("There was a problem with the request");
       }
-      console.error("There was a problem with the request", error);
+      // console.error("There was a problem with the request teste", error);
     } finally {
       setIsLoading(false);
     }
@@ -179,7 +180,23 @@ const Singup: React.FC = () => {
                 </button>
               )}
             </div>
+              {errorMessage && (
+                <span>
+                  <p className="text-red-500 text-sm">{errorMessage}</p>
+                </span>
+              )}
           </form>
+          <div>
+          <p className="text-sm text-center">
+              Already have an account?{"  "}
+              <a
+                href="/login"
+                className="font-bold text-sm text-blue-500 hover:text-blue-800"
+              >
+                Log in
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </>
