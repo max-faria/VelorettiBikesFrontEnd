@@ -54,13 +54,13 @@ const Login = () => {
               }`}
               type="email"
               id="email"
-              {...register("email", {required: "Email is required"})}
+              {...register("email", { required: "Email is required" })}
             />
-             {errors.email && (
-                <span className="text-red-500 text-sm">
-                    {errors.email.message}
-                </span>
-             )}
+            {errors.email && (
+              <span className="text-red-500 text-sm">
+                {errors.email.message}
+              </span>
+            )}
           </div>
           <div className="mb-6">
             <label
@@ -99,7 +99,7 @@ const Login = () => {
           <div className="flex flex-col items-center">
             <a
               className=" font-bold text-sm text-blue-500 hover:text-blue-800"
-              href="#"
+              href="/recover-password"
             >
               Forgot Password?
             </a>

@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import ContactUs from "../pages/ContactUs";
 import Login from "../pages/Login";
 import Singup from "../pages/Singup";
+import RecoverPassword from "../pages/RecoverPassword";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "singup",
         element: <Singup />
+      },
+      {
+        path: "recover-password",
+        element: <RecoverPassword />
       }
     ],
   },
