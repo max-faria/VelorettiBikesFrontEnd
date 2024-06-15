@@ -42,7 +42,10 @@ const Singup: React.FC = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/user/signup`,
-        submissionData
+        submissionData,
+        {
+          withCredentials: true 
+      }
       );
       setIsSuccess(true);
       console.log(response.data);

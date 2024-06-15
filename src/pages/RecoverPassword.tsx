@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 interface InterfaceRecoverPassword {
@@ -5,6 +7,9 @@ interface InterfaceRecoverPassword {
 }
 
 export const RecoverPassword: React.FC = () => {
+  const [errorMessage, setErrorMessage] = useState<string | null>("");
+  const [responseMessage, setResponseMessage] = useState<string | null>("");
+
   const {
     register,
     handleSubmit,
@@ -13,9 +18,21 @@ export const RecoverPassword: React.FC = () => {
   } = useForm<InterfaceRecoverPassword>();
 
   const onSubmit: SubmitHandler<InterfaceRecoverPassword> = async (data) => {
-    console.log(data);
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/user/recover-password`,
+        data
+      );
+      setResponseMessage(response.data);
+    } catch (err) {
+      if (axios.isAxiosError(err) && err.response) {
+        console.error(err.response.data.message || "Recover password failed");
+      } else {
+        setErrorMessage("There was a problem with the request");
+      }
+    }
     reset();
-  }
+  };
   return (
     <div className="bg-gray-100 flex items-center justify-center h-screen">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg p-6">
@@ -23,7 +40,7 @@ export const RecoverPassword: React.FC = () => {
           Recover your password
         </h2>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-4">
+          <div className="mb-2">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="email"
@@ -38,6 +55,14 @@ export const RecoverPassword: React.FC = () => {
               type="email"
               name="email"
             />
+          </div>
+          <div className="flex justify-center mb-2">
+            {responseMessage && (
+              <span className="text-green-500 text-sm">{responseMessage}</span>
+            )}
+            {errorMessage && (
+              <span className="text-red-500 text-sm">{errorMessage}</span>
+            )}
           </div>
           <div className="flex justify-end">
             <button
