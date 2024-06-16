@@ -7,6 +7,7 @@ import ContactUs from "../pages/ContactUs";
 import Login from "../pages/Login";
 import Singup from "../pages/Singup";
 import RecoverPassword from "../pages/RecoverPassword";
+import ResetPassword from "../pages/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -37,9 +38,13 @@ const router = createBrowserRouter([
       {
         path: "recover-password",
         element: <RecoverPassword />
-      }
+      },
     ],
   },
+  {
+    path: "/reset-password",
+    element: <ResetPassword />
+  }
 ]);
 
 export default router;
