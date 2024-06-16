@@ -64,12 +64,15 @@ export const RecoverPassword: React.FC = () => {
               <span className="text-red-500 text-sm">{errorMessage}</span>
             )}
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-2">
             <button
               className="bg-zinc-900 hover:bg-zinc-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-30"
               type="submit"
             >
               Send
+            </button>
+            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-30">
+              <a href="/login">Voltar</a>
             </button>
           </div>
         </form>
