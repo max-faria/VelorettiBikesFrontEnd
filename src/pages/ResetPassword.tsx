@@ -6,39 +6,46 @@ const ResetPassword: React.FC = () => {
   const [token, setToken] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [error, setError] = useState<string | null>("");
+  const [success, setSuccess] = useState<string | null>("");
   const navigate = useNavigate();
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get("token");
-    if(token){
-        setToken(token)
+    if (token) {
+      setToken(token);
     } else {
-        setError("Token is missing")
+      setError("Token is missing");
     }
-  },[]);
+  }, []);
 
-  const handleSubmit = async(event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if(password !== confirmPassword){
-        setError("Passwords do not match")
-        return;
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
     }
 
     try {
-        await axios.post(`${import.meta.env.VITE_BASE_URL}/user/reset-password`, {
-            token,
-            password
-        });
-        setSuccess('Password has been reset successfully');
-        setTimeout(() => navigate('/'), 3000); 
-        } catch (err) {
-            setError('Failed to reset password. Please try again.');
-        }
-  }
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/user/reset-password`, {
+        token,
+        password,
+      });
+      setSuccess("Password has been reset successfully");
+      setTimeout(() => navigate("/"), 3000);
+    } catch (err) {
+      if (axios.isAxiosError(err) && err.response) {
+        setError(
+          err.response.data ||
+            "Failed to reset password."
+        )
+      } else {
+        setError("Failed to reset password. Please try again.");
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -71,8 +78,19 @@ const ResetPassword: React.FC = () => {
                 type="password"
                 name="confirm-password"
                 required
-                
               />
+            </div>
+            <div className="flex justify-center mb-1">
+              {error && (
+                <span>
+                  <p className="text-red-500 text-sm">{error}</p>
+                </span>
+              )}
+              {success && (
+                <span>
+                  <p className="text-green-500 text-sm">{success}</p>
+                </span>
+              )}
             </div>
             <div>
               <button
