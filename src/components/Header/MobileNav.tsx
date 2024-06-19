@@ -104,7 +104,7 @@ const MobileNavBar: React.FC = () => {
                   </motion.li>
 
                   <motion.li onClick={() => toggleMobileNav()} variants={item}>
-                    Products
+                    <Link to={'product/ivy'}>Products</Link>
                   </motion.li>
 
                   <motion.li onClick={() => toggleMobileNav()} variants={item}>
@@ -116,21 +116,25 @@ const MobileNavBar: React.FC = () => {
                   </motion.li>
 
                   <motion.li onClick={() => toggleMobileNav()} variants={item}>
-                    <Link to={'contact-us'}>Contact</Link>
+                    <Link to={"contact-us"}>Contact</Link>
                   </motion.li>
                 </ul>
               </div>
               <motion.div variants={item} className="flex gap-20">
-                <User
-                  size={50}
-                  color="white"
-                  onClick={() => toggleMobileNav()}
-                />
-                <ShoppingBag
-                  size={50}
-                  color="white"
-                  onClick={() => toggleMobileNav()}
-                />
+                <Link to={'login'}>
+                  <User
+                    size={50}
+                    color="white"
+                    onClick={() => toggleMobileNav()}
+                  />
+                </Link>
+                <Link to={"cart"}>
+                  <ShoppingBag
+                    size={50}
+                    color="white"
+                    onClick={() => toggleMobileNav()}
+                  />
+                </Link>
               </motion.div>
             </div>
           </motion.div>
