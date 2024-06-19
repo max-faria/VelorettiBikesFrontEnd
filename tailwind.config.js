@@ -12,6 +12,8 @@ export default {
       color: {
         'black2': '#141615',
         'black-gray': '#141601e3',
+        'green-musgo': '#606160',
+        'cream': '#DDD9CD'
       },
       backgroundColor: {
         'blue-flag': '#1E4785',

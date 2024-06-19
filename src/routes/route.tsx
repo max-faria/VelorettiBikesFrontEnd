@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Singup from "../pages/Singup";
 import RecoverPassword from "../pages/RecoverPassword";
 import ResetPassword from "../pages/ResetPassword";
+import IvyProductPage from "../pages/Product/Ivy";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,15 @@ const router = createBrowserRouter([
         path: "recover-password",
         element: <RecoverPassword />
       },
+      {
+        path: "product",
+        children: [
+          {
+            path: "ivy",
+            element: <IvyProductPage />
+          }
+        ]
+      }
     ],
   },
   {

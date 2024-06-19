@@ -13,7 +13,7 @@ const Header = () => {
       <nav
         className={`${
           path === "/about-us" ? "bg-transparent" : "bg-white"
-        } absolute mx-auto lg:flex py-3 px-10 justify-between items-center lg:px-20 hidden w-full`}
+        }  mx-auto lg:flex py-3 px-10 justify-between items-center lg:px-20 hidden w-full`}
       >
         <div className=" basis-1/5">
           <img src={Logo} alt="Veloretti" />
