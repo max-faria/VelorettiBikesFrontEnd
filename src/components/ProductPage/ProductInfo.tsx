@@ -8,25 +8,48 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IvyThumbnail from "../../assets/thumbnail-ivy.png";
 import AceThumbnail from "../../assets/thumbnail-ace.png";
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { Product, addToCart } from "../../Features/Cart/CartSlice";
 
 // type CheckboxState = {
 //     [key: string]: boolean;
 // }
 
-type CheckboxKey = 'checkbox1' | 'checkbox2' | 'checkbox3'
+type CheckboxKey = "checkbox1" | "checkbox2" | "checkbox3";
 
 const ProductInfo: React.FC = () => {
-    const [selectedCheckbox, setSelectedCheckbox] = useState<CheckboxKey | null>('checkbox1'); // Default to the first checkbox
+  const [selectedCheckbox, setSelectedCheckbox] = useState<CheckboxKey | null>(
+    "checkbox1"
+  );
+  const dispatch = useDispatch();
+  const [selectedProduct, setSelectedProduct] = useState<Product>({
+    id: 2,
+    name: "Electric Ivy",
+    color: "Matte Black",
+    price: 3299,
+  });
 
-//   const [checkboxes, setCheckboxes] = useState<CheckboxState>({
-//     checkbox1: true,
-//     checkbox2: false,
-//     checkbox3: false,
-//   });
+  //   const [checkboxes, setCheckboxes] = useState<CheckboxState>({
+  //     checkbox1: true,
+  //     checkbox2: false,
+  //     checkbox3: false,
+  //   });
+
+  const handleColorChange = (color: string) => {
+    setSelectedProduct(prevProduct => ({...prevProduct, color}));
+  };
+
+  const handleModelChange = (model: string, id: number, price: number) => {
+    setSelectedProduct({ name: model, id, color: selectedProduct.color, price });
+  };
+
+  const handleAddToCart = (product: Product) => {
+    console.log(product);
+    dispatch(addToCart(product));
+  };
 
   const toggleCheckbox = (checkbox: CheckboxKey) => {
-   setSelectedCheckbox(checkbox)
+    setSelectedCheckbox(checkbox);
   };
 
   return (
@@ -39,13 +62,22 @@ const ProductInfo: React.FC = () => {
       </div>
       <div className="flex flex-col mt-4">
         <div className="flex gap-4 mb-6">
-          <div className="flex flex-col items-center gap-2 cursor-pointer">
-            <img className="rounded-md" src={AceThumbnail} alt="Bike Ace" />
+          <div
+            className="flex flex-col items-center gap-2 cursor-pointer"
+            onClick={() => handleModelChange("Eletric Ace", 1, 3599)}
+          >
+            <img 
+            className={`rounded-md ${selectedProduct.id == 1 ? 'border-black border-2' : ''}`} 
+            src={AceThumbnail} 
+            alt="Bike Ace" />
             <p className="text-sm">Electric Ace</p>
           </div>
-          <div className="flex flex-col items-center gap-2 cursor-pointer">
+          <div
+            onClick={() => handleModelChange("Eletric Ivy", 2, 3299)}
+            className="flex flex-col items-center gap-2 cursor-pointer"
+          >
             <img
-              className="rounded-md border-2 border-black"
+              className={`rounded-md ${selectedProduct.id == 2 ? 'border-black border-2' : ''} `}
               src={IvyThumbnail}
               alt="Bike Ivy"
             />
@@ -58,18 +90,27 @@ const ProductInfo: React.FC = () => {
           </label>
           <div className="flex gap-3 ">
             <FontAwesomeIcon
-              icon={selectedCheckbox == 'checkbox1' ? faCheckCircle : faCircle}
-              onClick={() => toggleCheckbox('checkbox1')}
+              icon={selectedCheckbox == "checkbox1" ? faCheckCircle : faCircle}
+              onClick={() => {
+                toggleCheckbox("checkbox1");
+                handleColorChange("Matte Black");
+              }}
               className={`mr-2 cursor-pointer text-black`}
             />
             <FontAwesomeIcon
-              icon={selectedCheckbox == 'checkbox2' ? faCheckCircle : faCircle}
-              onClick={() => toggleCheckbox('checkbox2')}
+              icon={selectedCheckbox == "checkbox2" ? faCheckCircle : faCircle}
+              onClick={() => {
+                toggleCheckbox("checkbox2");
+                handleColorChange("Green Musgos");
+              }}
               className={`mr-2 cursor-pointer text-green-900`}
             />
             <FontAwesomeIcon
-              icon={selectedCheckbox == 'checkbox3' ? faCheckCircle : faCircle}
-              onClick={() => toggleCheckbox('checkbox3')}
+              icon={selectedCheckbox == "checkbox3" ? faCheckCircle : faCircle}
+              onClick={() => {
+                toggleCheckbox("checkbox3");
+                handleColorChange("Silver Pink");
+              }}
               className={`mr-2 cursor-pointer text-pink-200`}
             />
           </div>
@@ -89,7 +130,10 @@ const ProductInfo: React.FC = () => {
             Scroll to Specifications
             <FontAwesomeIcon icon={faArrowDown} className="ml-2" />
           </button>
-          <button className="bg-black text-white py-5 px-4 rounded-full mb-4 hover:bg-gray-800">
+          <button
+            onClick={() => handleAddToCart(selectedProduct)}
+            className="bg-black text-white py-5 px-4 rounded-full mb-4 hover:bg-gray-800"
+          >
             Customize now
           </button>
         </div>
