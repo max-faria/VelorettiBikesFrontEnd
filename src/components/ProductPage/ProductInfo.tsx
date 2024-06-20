@@ -7,9 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import IvyThumbnail from "../../assets/thumbnail-ivy.png";
 import AceThumbnail from "../../assets/thumbnail-ace.png";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Product, addToCart } from "../../Features/Cart/CartSlice";
+import { RootState } from "../../App/store";
 
 // type CheckboxState = {
 //     [key: string]: boolean;
@@ -27,20 +28,19 @@ const ProductInfo: React.FC = () => {
     name: "Electric Ivy",
     color: "Matte Black",
     price: 3299,
+    quantity: 1,
   });
-
-  //   const [checkboxes, setCheckboxes] = useState<CheckboxState>({
-  //     checkbox1: true,
-  //     checkbox2: false,
-  //     checkbox3: false,
-  //   });
+  const cart = useSelector((state: RootState) => state.cart.items);
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
   const handleColorChange = (color: string) => {
     setSelectedProduct(prevProduct => ({...prevProduct, color}));
   };
 
   const handleModelChange = (model: string, id: number, price: number) => {
-    setSelectedProduct({ name: model, id, color: selectedProduct.color, price });
+    setSelectedProduct({ name: model, id, color: selectedProduct.color, price, quantity: 1 });
   };
 
   const handleAddToCart = (product: Product) => {
@@ -56,9 +56,9 @@ const ProductInfo: React.FC = () => {
     <div className="md:w-1/2 flex flex-col justify-between mt-6 md:mt-0 md:ml-6 md:px-14 antialiased">
       <div className="flex justify-between pt-16">
         <h1 className="text-2xl font-normal flex items-start">
-          Electric Ivy <span className="text-xs ml-1">Two</span>
+          {selectedProduct.name} <span className="text-xs ml-1">Two</span>
         </h1>
-        <p className="text-2xl font-normal text-gray-700">€ 3.299</p>
+        <p className="text-2xl font-normal text-gray-700">€ {selectedProduct.price}</p>
       </div>
       <div className="flex flex-col mt-4">
         <div className="flex gap-4 mb-6">

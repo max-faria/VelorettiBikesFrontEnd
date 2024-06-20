@@ -5,7 +5,7 @@ export interface Product {
     name: string;
     price: number;
     color: string;
-    quantity?: number;
+    quantity: number;
 }
 
 interface CartState {
@@ -22,7 +22,15 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart(state, action: PayloadAction<Product>) {
-            state.items.push(action.payload)
+            const existingProduct = state.items.find((item) =>
+                item.id === action.payload.id &&
+                item.color === action.payload.color
+            )
+            if(existingProduct){
+                existingProduct.quantity += 1;
+            } else {
+                state.items.push(action.payload)
+            }
         },
         removeFromCart(state, action: PayloadAction<number>) {
             state.items = state.items.filter(item => item.id !== action.payload)
