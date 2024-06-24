@@ -9,6 +9,7 @@ import Singup from "../pages/Singup";
 import RecoverPassword from "../pages/RecoverPassword";
 import ResetPassword from "../pages/ResetPassword";
 import IvyProductPage from "../pages/Product/Ivy";
+import Cart from "../components/Cart";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "recover-password",
         element: <RecoverPassword />
+      },
+      {
+        path: "cart",
+        element: <Cart />
       },
       {
         path: "product",
