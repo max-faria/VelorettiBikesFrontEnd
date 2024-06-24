@@ -6,13 +6,17 @@ const Cart: React.FC = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
 
-  const handleQuantityChange = (id: number, color: string, quantity: number) => {
+  const handleQuantityChange = (
+    id: number,
+    color: string,
+    quantity: number
+  ) => {
     dispatch(updateQuantity({ id, color, quantity }));
-  }
+  };
 
   const handleRemoveFromCart = (id: number, color: string) => {
-    dispatch(removeFromCart({id, color}));
-  }
+    dispatch(removeFromCart({ id, color }));
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -34,7 +38,11 @@ const Cart: React.FC = () => {
           <tbody>
             {cartItems.map((item) => (
               <tr key={`${item.id}-${item.color}`} className="text-center">
-                <td className="py-2">{item.name}</td>
+                <td className="py-2">
+                  <div className="flex flex-col items-center">
+                    <img src={item.url} alt={`Image of ${item.name}`} className="rounded-md" />
+                    {item.name}</div>
+                </td>
                 <td className="py-2">{item.color}</td>
                 <td className="py-2">{item.price}</td>
                 <td className="py-2">
@@ -43,14 +51,21 @@ const Cart: React.FC = () => {
                     type="number"
                     min={1}
                     value={item.quantity}
-                    onChange={(e) => handleQuantityChange(item.id, item.color, parseInt(e.target.value))}
+                    onChange={(e) =>
+                      handleQuantityChange(
+                        item.id,
+                        item.color,
+                        parseInt(e.target.value)
+                      )
+                    }
                   />
                 </td>
                 <td className="py-2">${item.price * item.quantity}</td>
                 <td className="py-2">
                   <button
-                  onClick={() => handleRemoveFromCart(item.id, item.color)} 
-                  className="bg-red-500 text-white px-4 py-2 rounded">
+                    onClick={() => handleRemoveFromCart(item.id, item.color)}
+                    className="bg-red-500 text-white px-4 py-2 rounded"
+                  >
                     Remove
                   </button>
                 </td>

@@ -6,6 +6,7 @@ export interface Product {
     price: number;
     color: string;
     quantity: number;
+    url?: string,
 }
 
 interface CartState {

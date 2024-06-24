@@ -8,7 +8,7 @@ import Login from "../pages/Login";
 import Singup from "../pages/Singup";
 import RecoverPassword from "../pages/RecoverPassword";
 import ResetPassword from "../pages/ResetPassword";
-import IvyProductPage from "../pages/Product/Ivy";
+import IvyProductPage from "../pages/Product/Product";
 import Cart from "../components/Cart";
 
 const router = createBrowserRouter([

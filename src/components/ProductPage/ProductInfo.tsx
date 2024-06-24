@@ -29,6 +29,7 @@ const ProductInfo: React.FC = () => {
     color: "Matte Black",
     price: 3299,
     quantity: 1,
+    url: IvyThumbnail,
   });
   const cart = useSelector((state: RootState) => state.cart.items);
   useEffect(() => {
@@ -39,8 +40,8 @@ const ProductInfo: React.FC = () => {
     setSelectedProduct(prevProduct => ({...prevProduct, color}));
   };
 
-  const handleModelChange = (model: string, id: number, price: number) => {
-    setSelectedProduct({ name: model, id, color: selectedProduct.color, price, quantity: 1 });
+  const handleModelChange = (model: string, id: number, price: number, url: string) => {
+    setSelectedProduct({ name: model, id, color: selectedProduct.color, price, quantity: 1, url});
   };
 
   const handleAddToCart = (product: Product) => {
@@ -64,7 +65,7 @@ const ProductInfo: React.FC = () => {
         <div className="flex gap-4 mb-6">
           <div
             className="flex flex-col items-center gap-2 cursor-pointer"
-            onClick={() => handleModelChange("Eletric Ace", 1, 3599)}
+            onClick={() => handleModelChange("Eletric Ace", 1, 3599, AceThumbnail)}
           >
             <img 
             className={`rounded-md ${selectedProduct.id == 1 ? 'border-black border-2' : ''}`} 
@@ -73,7 +74,7 @@ const ProductInfo: React.FC = () => {
             <p className="text-sm">Electric Ace</p>
           </div>
           <div
-            onClick={() => handleModelChange("Eletric Ivy", 2, 3299)}
+            onClick={() => handleModelChange("Eletric Ivy", 2, 3299, IvyThumbnail)}
             className="flex flex-col items-center gap-2 cursor-pointer"
           >
             <img
