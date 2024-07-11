@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 interface InterfaceLoginInput {
   email: string;
@@ -97,20 +98,20 @@ const Login = () => {
             </button>
           </div>
           <div className="flex flex-col items-center">
-            <a
+            <Link
+              to="/recover-password"
               className=" font-bold text-sm text-blue-500 hover:text-blue-800"
-              href="/recover-password"
             >
               Forgot Password?
-            </a>
+            </Link>
             <p className="text-sm">
               Not have an account?{" "}
-              <a
-                href="/singup"
+              <Link
+                to="/singup"
                 className="font-bold text-sm text-blue-500 hover:text-blue-800"
               >
                 Sign in
-              </a>
+              </Link>
             </p>
           </div>
         </form>

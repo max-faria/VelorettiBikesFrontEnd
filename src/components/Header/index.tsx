@@ -22,16 +22,16 @@ const Header = () => {
         <div className="flex basis-2/5">
           <ul className="flex gap-8 text-black">
             <li>
-              <a href="/">Home</a>
+            <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/product/ivy">Products</a>
+              <Link to="/products/ivy">Products</Link>
             </li>
             <li>
-              <a href="">City</a>
+              <Link to="/city">City</Link>
             </li>
             <li>
-              <a href="/about-us">About Us</a>
+              <Link to="/about-us">About Us</Link>
             </li>
             <li>
               <Link to="/contact-us">Contact</Link>

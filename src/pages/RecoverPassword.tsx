@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 interface InterfaceRecoverPassword {
   email: string;
@@ -72,7 +73,7 @@ export const RecoverPassword: React.FC = () => {
               Send
             </button>
             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-30">
-              <a href="/login">Voltar</a>
+              <Link to="/login">Voltar</Link>
             </button>
           </div>
         </form>

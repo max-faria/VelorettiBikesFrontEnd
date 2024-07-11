@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 interface InterfaceSingupInput {
   name: string;
@@ -44,8 +45,8 @@ const Singup: React.FC = () => {
         `${import.meta.env.VITE_BASE_URL}/user/signup`,
         submissionData,
         {
-          withCredentials: true 
-      }
+          withCredentials: true,
+        }
       );
       setIsSuccess(true);
       console.log(response.data);
@@ -53,7 +54,7 @@ const Singup: React.FC = () => {
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
         setErrorMessage(error.response.data.message || "Sign-up Failed");
-        console.log(error.response.data.message)
+        console.log(error.response.data.message);
       } else {
         setErrorMessage("There was a problem with the request");
       }
@@ -183,21 +184,22 @@ const Singup: React.FC = () => {
                 </button>
               )}
             </div>
-              {errorMessage && (
-                <span>
-                  <p className="text-red-500 text-sm">{errorMessage}</p>
-                </span>
-              )}
+            {errorMessage && (
+              <span>
+                <p className="text-red-500 text-sm">{errorMessage}</p>
+              </span>
+            )}
           </form>
           <div>
-          <p className="text-sm text-center">
+            <p className="text-sm text-center">
               Already have an account?{"  "}
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="font-bold text-sm text-blue-500 hover:text-blue-800"
               >
                 Log in
-              </a>
+              </Link>
+              
             </p>
           </div>
         </div>
