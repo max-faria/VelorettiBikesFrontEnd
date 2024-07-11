@@ -1,4 +1,3 @@
-import BikeImg from "../../assets/IvyProduct.png"
 
 interface ProductImgInterface {
     img: string

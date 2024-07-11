@@ -11,11 +11,13 @@ export interface Product {
 
 interface CartState {
     items: Product[];
+    showPopUp: boolean;
 
 }
 
 const initialState: CartState = {
     items: [],
+    showPopUp: false,
 }
 
 export const cartSlice = createSlice({
@@ -31,7 +33,9 @@ export const cartSlice = createSlice({
                 existingProduct.quantity += 1;
             } else {
                 state.items.push(action.payload)
-            }
+            } 
+            state.showPopUp = true;
+
         },
         removeFromCart(state, action: PayloadAction<{id: number, color: string}>) {
             state.items = state.items.filter(item => item.id !== action.payload.id || item.color !== action.payload.color)
@@ -45,8 +49,11 @@ export const cartSlice = createSlice({
                 product.quantity = action.payload.quantity;
             }
         },
+        hidePopUp(state){
+            state.showPopUp = false;
+        }
     }
 })
 
-export const { addToCart, removeFromCart, clearCart, updateQuantity } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, updateQuantity, hidePopUp } = cartSlice.actions;
 export default cartSlice.reducer;
