@@ -22,31 +22,31 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path: "about-us",
+        path: "/about-us",
         element: <AboutUs />,
       },
       {
-        path: "contact-us",
+        path: "/contact-us",
         element: <ContactUs />
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />
       },
       {
-        path: "singup",
+        path: "/singup",
         element: <Singup />
       },
       {
-        path: "recover-password",
+        path: "/recover-password",
         element: <RecoverPassword />
       },
       {
-        path: "cart",
+        path: "/cart",
         element: <Cart />
       },
       {
-        path: "product",
+        path: "/product",
         children: [
           {
             path: "ivy",
