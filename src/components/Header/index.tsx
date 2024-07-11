@@ -25,7 +25,7 @@ const Header = () => {
             <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/products/ivy">Products</Link>
+              <Link to="/product/ivy">Products</Link>
             </li>
             <li>
               <Link to="/city">City</Link>

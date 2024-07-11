@@ -39,10 +39,10 @@ export default {
         0.8: '80%',
       },
       backgroundImage: {
-        'about-us-bg': "url('./src/assets/about-us-bg.png')",
-        'bike-people': "URL('./src/assets/bike-people.png')",
-        'hero-section': "URL('./src/assets/hero-section.png')",
-        'maintenance-section': "URL('src/assets/home2.png')"
+        'about-us-bg': "url('../src/assets/about-us-bg.png')",
+        'bike-people': "URL('../src/assets/bike-people.png')",
+        'hero-section': "URL('../src/assets/hero-section.png')",
+        'maintenance-section': "URL('../src/assets/home2.png')"
       }
     },
   },
