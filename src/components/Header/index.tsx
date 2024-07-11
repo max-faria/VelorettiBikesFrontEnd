@@ -2,6 +2,7 @@ import { ShoppingBag, User } from "@phosphor-icons/react";
 import Logo from "../../assets/logo.svg";
 import MobileNavBar from "./MobileNav";
 import { Link, useLocation } from "react-router-dom";
+import CardPopup from "../CartPopuP";
 // import ThemeToggle from "../ToggleTheme";
 
 const Header = () => {
@@ -46,6 +47,7 @@ const Header = () => {
           </Link>
           {/* <ThemeToggle/> */}
         </div>
+          <CardPopup />
       </nav>
 
       <MobileNavBar />

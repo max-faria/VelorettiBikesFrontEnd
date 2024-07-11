@@ -19,15 +19,19 @@ const CardPopup: React.FC = () => {
 
   return (
     showPopup && (
-      <div>
-        {cartItems.map((item) =>(
-            <div key={item.id}>
-                <img src={item.url} alt="" />
-                <p>{item.name}</p>
+      <div className="absolute top-12 right-16 w- bg-white text-black p-2 rounded shadow-lg">
+        {cartItems.map((item) => (
+          <div key={item.id} className="flex p-2 w-full">
+            <div className="flex gap-2 text-xs justify-between w-full ">
+              <img src={item.url} alt="" className="rounded-md w-1/3 object-contain" />
+              <div className="flex flex-col">
+                <p className="font-bold">{item.name}</p>
                 <p>{item.color}</p>
-                <p>{item.price}</p>
                 <p>{item.quantity}</p>
+              </div>
+            <p>{item.price}</p>
             </div>
+          </div>
         ))}
       </div>
     )
