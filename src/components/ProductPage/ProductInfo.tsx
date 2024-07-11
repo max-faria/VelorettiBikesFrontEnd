@@ -87,7 +87,7 @@ const ProductInfo: React.FC = () => {
         </div>
         <div className="flex flex-col mb-4">
           <label htmlFor="matte-black" className="text-gray-700 text-md my-2">
-            Ivy Two Matte Black
+            {selectedProduct.color}
           </label>
           <div className="flex gap-3 ">
             <FontAwesomeIcon
@@ -135,7 +135,7 @@ const ProductInfo: React.FC = () => {
             onClick={() => handleAddToCart(selectedProduct)}
             className="bg-black text-white py-5 px-4 rounded-full mb-4 hover:bg-gray-800"
           >
-            Customize now
+            Add to cart
           </button>
         </div>
         <hr className="mt-3 mb-2" />
