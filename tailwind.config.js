@@ -40,9 +40,9 @@ export default {
       },
       backgroundImage: {
         'about-us-bg': "url('../src/assets/about-us-bg.png')",
-        'bike-people': "URL('../src/assets/bike-people.png')",
-        'hero-section': "URL('../src/assets/hero-section.png')",
-        'maintenance-section': "URL('../src/assets/home2.png')"
+        'bike-people': "url('../src/assets/bike-people.png')",
+        'hero-section': "url('../src/assets/hero-section.png')",
+        'maintenance-section': "url('../src/assets/home2.png')"
       }
     },
   },
