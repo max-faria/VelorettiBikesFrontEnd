@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { AppDispatch, RootState } from "../App/store";
+import { loginAsync } from "../Features/Auth/authSlice";
 
 interface InterfaceLoginInput {
   email: string;
@@ -14,26 +17,39 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<InterfaceLoginInput>();
+  const dispatch = useDispatch<AppDispatch>()
+  const navigate = useNavigate()
   const [errorMessage, setErrorMessage] = useState<string | null>("");
+  // const {loading, error, isAuthenticated} = useSelector((state: RootState) => state.auth)
+
+  // const onSubmit: SubmitHandler<InterfaceLoginInput> = async (data) => {
+  //   console.log(data);
+
+  //   try {
+  //     const response = await axios.post(
+  //       `${import.meta.env.VITE_BASE_URL}/user/login`,
+  //       data
+  //     );
+  //     console.log(response.data);
+  //   } catch (err) {
+  //     if (axios.isAxiosError(err) && err.response) {
+  //       setErrorMessage(err.response.data.message || "Login Failed");
+  //     } else {
+  //       setErrorMessage("There was a problem with the request");
+  //     }
+  //     console.error("There was a problem with the request", err);
+  //   }
+  // };
 
   const onSubmit: SubmitHandler<InterfaceLoginInput> = async (data) => {
-    console.log(data);
+    const result = await dispatch(loginAsync(data));
 
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/user/login`,
-        data
-      );
-      console.log(response.data);
-    } catch (err) {
-      if (axios.isAxiosError(err) && err.response) {
-        setErrorMessage(err.response.data.message || "Login Failed");
-      } else {
-        setErrorMessage("There was a problem with the request");
-      }
-      console.error("There was a problem with the request", err);
+    if(loginAsync.fulfilled.match(result)) {
+      navigate('/about-us')
+    } else {
+      setErrorMessage(result.payload as string)
     }
-  };
+  }
 
   return (
     <div className="bg-gray-100 flex items-center justify-center h-screen px-8">
