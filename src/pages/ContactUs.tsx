@@ -6,9 +6,9 @@ const ContactUs: React.FC = () => {
 
   return (
     <div className="antialiased">
-      <div className="flex flex-col sm:flex-row w-full sm:justify-center">
+      <div className="flex flex-col gap-10 sm:flex-row w-full sm:justify-center sm:p-10">
        <ContactForm />
-        <div className="hidden sm:basis-1/2 sm:flex sm:justify-center sm:my-20">
+        <div className="hidden  sm:flex sm:justify-center sm:my-20">
           <img className="ali" src={ContactUsImg} alt="Man smiling in a bike" />
         </div>
       </div>
