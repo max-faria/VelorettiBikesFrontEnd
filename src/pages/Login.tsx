@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,7 +20,7 @@ const Login = () => {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
   const [errorMessage, setErrorMessage] = useState<string | null>("");
-  // const {loading, error, isAuthenticated} = useSelector((state: RootState) => state.auth)
+  const {loading, error, isAuthenticated} = useSelector((state: RootState) => state.auth)
 
   // const onSubmit: SubmitHandler<InterfaceLoginInput> = async (data) => {
   //   console.log(data);
@@ -49,6 +49,8 @@ const Login = () => {
     } else {
       setErrorMessage(result.payload as string)
     }
+
+    console.log(loading, error, isAuthenticated)
   }
 
   return (
@@ -109,8 +111,9 @@ const Login = () => {
             <button
               className="bg-zinc-900 hover:bg-zinc-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
               type="submit"
+              disabled={loading}
             >
-              Login
+              {loading ? 'Loading...' : 'Login'}
             </button>
           </div>
           <div className="flex flex-col items-center">
